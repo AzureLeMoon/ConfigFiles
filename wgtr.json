@@ -10,9 +10,9 @@
       "peer_public_key": "7BPu8O5Jaeb+izgvllr+VGxQs/gW2YX5VT93IjmQe1o=",
       "pre_shared_key": "El51SuyvFo2XE1yxfdBDIATcl+yCOHdmqGbzr5lf4FM=",
       "mtu": 1420,
-      "fake_packets": "10-20",
-      "fake_packets_size": "40-100",
-      "fake_packets_delay": "300-500"
+      "fake_packets": "5-10",
+      "fake_packets_size": "10-20",
+      "fake_packets_delay": "100-200"
     }
   ]
 }

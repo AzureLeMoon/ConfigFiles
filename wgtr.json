@@ -11,7 +11,7 @@
       "pre_shared_key": "El51SuyvFo2XE1yxfdBDIATcl+yCOHdmqGbzr5lf4FM=",
       "mtu": 1280,
       "fake_packets": "5-10",
-      "fake_packets_size": "40-1000",
+      "fake_packets_size": "40-100",
       "fake_packets_delay": "300-500"
     }
   ]

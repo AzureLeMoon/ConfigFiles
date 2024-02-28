@@ -1,19 +1,7 @@
-{
-  "outbounds": 
-  [
-    {
-      "type": "wireguard",
-      "tag": "WG",
-      "local_address": [
-        "10.8.0.2/24"
-      ],
-      "private_key": "iDmBrIpWwobHMyCjSBEi6ttADX7FkQeWIg1iPRIlHV8=",
-      "server": "dawsh.shomarekartbef.rest",
-      "server_port": 51820,
-      "peer_public_key": "0XLAI1iy6kpabF7PG60gwWj6rXRH5+LJ8YT1rR6RHgA=",
-      "pre_shared_key": "8r1sjM7UVAL5/Ps6PIQvU82VhHjvtMjwVeVAcsHsJl4=",
-      "mtu": 1500,
-      "fake_packets": "5-10"
-    }
-  ]
-}
+//profile-title: base64:8J+UpSBXQVJQIPCflKU=
+//profile-update-interval: 24
+//subscription-userinfo: upload=0; download=0; total=10737418240000000; expire=2546249531
+//support-url: https://t.me/hiddify
+//profile-web-page-url: https://hiddify.com
+
+warp://auto?ifp=10-20&ifps=20-40&ifpd=30-50#WarpInWarp&&detour=warp://auto?ifp=10-20&ifps=20-40&ifpd=30-50#Warp

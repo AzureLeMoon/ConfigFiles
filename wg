@@ -4,4 +4,4 @@
 //support-url: https://t.me/hiddify
 //profile-web-page-url: https://hiddify.com
 
-warp://auto?ifp=10-20&ifps=20-40&ifpd=30-50#WarpInWarp&&detour=warp://auto?ifp=10-20&ifps=20-40&ifpd=30-50#Warp
+warp://auto?ifp=10-20&ifps=20-40&ifpd=30-50&workers=2#WarpInWarp&&detour=warp://auto?ifp=10-20&ifps=20-40&ifpd=30-50&workers=2#Warp

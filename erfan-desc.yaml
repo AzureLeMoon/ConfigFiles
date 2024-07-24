@@ -1,0 +1,156 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: debug
+ipv6: false
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  use-hosts: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  listen: 0.0.0.0:53
+  prefer-h3: true #Enable DoH support for HTTP/3,
+  #fake-ip-filter:
+     #- "seyed.shomarekartbef.rest"
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 1.0.0.1
+  nameserver:
+    - https://dns.njal.la/dns-query
+    - https://yj581klt1q.cloudflare-gateway.com/dns-query
+    - https://seyed.shomarekartbef.rest/dns-query
+    - 8.8.8.8
+    #- 1.1.1.1
+
+ 
+
+
+tun:
+  stack: mixed
+  device: Meta
+  auto-route: true
+  strict-route: false
+  auto-detect-interface: true
+  dns-hijack:
+  - any:53
+  mtu: 9000
+  enable: true
+
+
+proxies:
+ 
+
+  - name: "ShadowSocksDE"
+    type: ss
+    server: Dawsh.shomarekartbef.rest
+    port: 46800
+    cipher: 2022-blake3-aes-256-gcm
+    password: "X2PLdhVUIhpXdMCFRDAncgdyOZ97pYguSTyOPCjCPDM=:FAWR0mjAP9hLB0KZKTViOpVPFeIuCPZvN0nZzBTCk8w="
+    udp: true
+
+
+  - name: Arvan-par01
+    type: vless
+    server: par01.familycloudstorage.ir
+    port: 443
+    uuid: 3c490a16-0491-4057-a807-cd88929e8bfa
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+
+  - name: Arvan-ams01
+    type: vless
+    server: ams01.familycloudstorage.ir
+    port: 443
+    uuid: 3c490a16-0491-4057-a807-cd88929e8bfa
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome  
+
+  - name: Arvan-par02
+    type: vless
+    server: par01.familycloudstorage.ir
+    port: 443
+    uuid: 3b9a6d0e-206b-49ed-a753-d6063ba78e7a
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+
+  - name: Arvan-ams02
+    type: vless
+    server: ams01.familycloudstorage.ir
+    port: 443
+    uuid: 3b9a6d0e-206b-49ed-a753-d6063ba78e7a
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+
+  - name: reverse-vless
+    type: vless
+    server: baradar-8c92abd0cf-arvanchallenge.apps.ir-thr-ba1.arvancaas.ir
+    port: 443
+    uuid: d54d2d76-f71d-49a5-9341-1f62a627e057
+    udp: true
+    tls: true
+    network: ws
+    servername: baradar-8c92abd0cf-arvanchallenge.apps.ir-thr-ba1.arvancaas.ir # priority over wss host
+    alpn:
+      - h2
+    client-fingerprint: firefox
+    ws-opts:
+      path: "/wskholase"
+      headers:
+        Host: baradar-8c92abd0cf-arvanchallenge.apps.ir-thr-ba1.arvancaas.ir
+
+
+
+proxy-groups: 
+
+  - name: auto
+    type: select
+    proxies:
+      - ShadowSocksDE
+      - Arvan-ams01
+      - Arvan-par01
+      - Arvan-par02
+      - Arvan-ams02
+      - reverse-vless
+    url: "https://cp.cloudflare.com/generate_204"
+    interval: 300      
+
+listeners:
+  - name: socks5-in-1
+    type: socks
+    port: 10000
+    listen: 0.0.0.0 # 默认监听 0.0.0.0
+    # rule: sub-rule-name1 # 默认使用 rules，如果未找到 sub-rule 则直接使用 rules
+    proxy: auto 
+    udp: true # 默认 true      
+
+   
+
+rules:
+  - GEOSITE,OPENAI,auto
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/8,DIRECT,no-resolve
+  - GEOIP,IR,DIRECT
+  - DOMAIN-KEYWORD,.ir,DIRECT
+  - GEOSITE,category-ir,DIRECT
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,category-ads,REJECT
+  - GEOSITE,google-ads,REJECT 
+  - MATCH,auto
+

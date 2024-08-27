@@ -1,5 +1,19 @@
 {
   "Regions": {
+    "996": {
+      "RegionID": 996,
+      "RegionCode": "fin",
+      "RegionName": "finland",
+      "Nodes": [
+        {
+          "Name": "fin-derp",
+          "RegionID": 996,
+          "HostName": "fin-derp.netetkharabe.ir",
+          "IPv4": "91.108.241.141",
+          "IPv6": "2a12:5940:76db::2"
+        }
+      ]
+    },
     "997": {
       "RegionID": 997,
       "RegionCode": "trk",

@@ -41,6 +41,18 @@
           "IPv6": "22a0b:4140:68b5::2"
         }
       ]
+    },
+    "999": {
+      "RegionID": 999,
+      "RegionCode": "headscale",
+      "RegionName": "Headscale Embedded DERP",
+      "Nodes": [
+        {
+          "Name": "hs-embeded-derp",
+          "RegionID": 999,
+          "HostName": "hs-personal-8c92abd0cf-arvanchallenge.apps.ir-thr-ba1.arvancaas.ir"
+        }
+      ]
     }
   }
 }

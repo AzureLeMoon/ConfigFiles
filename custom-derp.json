@@ -1,5 +1,18 @@
 {
   "Regions": {
+    "997": {
+      "RegionID": 997,
+      "RegionCode": "trk",
+      "RegionName": "turkey",
+      "Nodes": [
+        {
+          "Name": "trk-derp",
+          "RegionID": 997,
+          "HostName": "trk-derp.netetkharabe.ir",
+          "IPv4": "188.132.234.138"
+        }
+      ]
+    },
     "998": {
       "RegionID": 998,
       "RegionCode": "swe",

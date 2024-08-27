@@ -1,5 +1,19 @@
 {
   "Regions": {
+    "995": {
+      "RegionID": 995,
+      "RegionCode": "iri",
+      "RegionName": "iran",
+      "Nodes": [
+        {
+          "Name": "iri-derp",
+          "RegionID": 995,
+          "HostName": "iri-derp.netetkharabe.ir",
+          "IPv4": "5.34.197.55",
+          "IPv6": "2a07:3906:0:2::4b3"
+        }
+      ]
+    },
     "996": {
       "RegionID": 996,
       "RegionCode": "fin",

@@ -46,9 +46,6 @@
       "RegionID": 999,
       "RegionCode": "headscale",
       "RegionName": "Headscale Embedded DERP",
-      "Latitude": 0,
-      "Longitude": 0,
-      "Avoid": false,
       "Nodes": [
         {
           "Name": "hs-embeded-derp",
